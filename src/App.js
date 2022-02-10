@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./styles.css";
+import "./App.css";
 import ListOfPosts from "./components/ListOfPosts";
 import Post from "./components/Post";
 import { Switch, Route } from "react-router-dom";
