@@ -1,16 +1,23 @@
 import { Link } from "react-router-dom";
+import './Post.css'
 
 const ListOfPosts = ({ posts }) => {
   return (
     <div>
-      <h2>Click on a post to read more...</h2>
+      <nav className="navbar navbar-light bg-light">
+  <div className="container-fluid">
+    <span className="navbar-brand mb-0 h1">Forum</span>
+  </div>
+
+</nav>
+      <p id="subheader">Click on a post to read its comments</p>
       {posts &&
         posts.map((post, i) => {
           return (
             <Link key={i} to={{ pathname: `/post/${post.id}` }}>
-              <div>
-                <p>{post.title}</p>
-              </div>
+              <ul>
+              <li id="posts">{post.title}</li>
+              </ul>
             </Link>
           );
         })}

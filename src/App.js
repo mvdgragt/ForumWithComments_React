@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import ListOfPosts from "./components/ListOfPosts";
 import Post from "./components/Post";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route,Link } from "react-router-dom";
+
+// styles
+import "./App.css";
 
 export default function App() {
   const [posts, setPosts] = useState([]);
@@ -22,7 +24,6 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Forum</h1>
       <Switch>
         <Route
           exact

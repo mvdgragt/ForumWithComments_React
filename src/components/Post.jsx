@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
+
 const Post = () => {
   const [postDetails, setPostDetails] = useState();
   const [comments, setComments] = useState();
@@ -19,18 +20,30 @@ const Post = () => {
 
   return postDetails && comments ? (
     <div>
-      <Link to="/">Back to startpage</Link>
+      <nav className="navbar navbar-light bg-light">
+  <div className="container-fluid">
+    <span className="navbar-brand mb-0 h1">Forum</span>
+  <Link to="/"><button type="button" className="btn btn-outline-secondary">Home</button></Link>
 
-      <p>{postDetails.title}</p>
+  </div>
+
+</nav>
+<div id="posts">
+      <h5>{postDetails.title}</h5>
+      < hr />
       <p>{postDetails.body}</p>
-      <p>Comments:</p>
-      <hr />
+      </div>
+      <p id="comment">Comments:</p>
+      
       {comments.map((comment, id) => {
         return (
           <div key={id}>
-            <li> {comment.name}</li>
-            <li> {comment.email}</li>
-            <li> {comment.body}</li>
+            <p id="#body"> {comment.body} </p>
+            <div id="author">
+            <p id="commentname">Written by: {comment.name}</p>
+            <p>email: {comment.email}</p>
+            </div>
+            < hr />   
           </div>
         );
       })}
